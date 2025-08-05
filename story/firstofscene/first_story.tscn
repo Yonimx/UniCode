@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnigak467upe2"]
+
+[ext_resource type="Script" path="res://story/firstofscene/firstscene.gd" id="1_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dvha281mkx0ku" path="res://story/firstofscene/assets/images/bg image.png" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://c0aeefhhsyu76" path="res://story/firstofscene/scenes/character.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://mdb4jatd6g56" path="res://story/firstofscene/scenes/dialogue_ui.tscn" id="3_epypp"]
+
+[node name="first scene" type="Node2D"]
+script = ExtResource("1_0hol4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wtcfe")
+expand_mode = 1
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="character" parent="CanvasLayer2/Control" instance=ExtResource("2_0e48y")]
+unique_name_in_owner = true
+position = Vector2(37, -210)
+
+[node name="dialogUi" parent="CanvasLayer2" instance=ExtResource("3_epypp")]
+unique_name_in_owner = true

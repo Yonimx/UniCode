@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b1i8gc121128u"]
+
+[ext_resource type="FontFile" uid="uid://bagst6ihhr47c" path="res://story/firstofscene/assets/images/Eight-Bit Madness.ttf" id="1_m21ks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y31nv"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(0.160784, 0.160784, 0.160784, 0.588235)
+border_width_top = 1
+border_color = Color(0.159066, 0.39087, 0.70951, 0.588235)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[resource]
+default_font = ExtResource("1_m21ks")
+default_font_size = 20
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_y31nv")
+RichTextLabel/font_sizes/normal_font_size = 50

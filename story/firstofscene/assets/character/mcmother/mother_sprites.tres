@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bl557ht0n8yc3"]
+
+[ext_resource type="Texture2D" uid="uid://b66fa0jvnwagt" path="res://story/firstofscene/assets/character/mcmother/frame2.png" id="1_g4pj2"]
+[ext_resource type="Texture2D" uid="uid://cqxt4bkhxuvia" path="res://story/firstofscene/assets/character/mcmother/frame 01.png" id="2_3hcaa"]
+[ext_resource type="Texture2D" uid="uid://bhyw0wqvwby66" path="res://story/firstofscene/assets/character/mc/f1.png" id="3_3hcaa"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("1_g4pj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3hcaa")
+}],
+"loop": false,
+"name": &"calling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g4pj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3hcaa")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g4pj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3hcaa")
+}],
+"loop": false,
+"name": &"talking",
+"speed": 2.0
+}]

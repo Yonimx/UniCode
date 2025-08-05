@@ -1,0 +1,9 @@
+join mother left
+maincharac: Alex! ready Yourself or you'll be late in school
+join maincharac right
+maincharac: ok.
+leave mother [animation="Slide Out Right" wait="true"]
+leave maincharac [animation="Fade Out" length="1.2"]
+join maincharac (in_uniform) center [animation="Fade In" length="0.9"]
+maincharac (in_uniform): now lets go!
+[end_timeline]

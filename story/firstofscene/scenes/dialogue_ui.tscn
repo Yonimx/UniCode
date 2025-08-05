@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://mdb4jatd6g56"]
+
+[ext_resource type="Theme" uid="uid://b1i8gc121128u" path="res://story/firstofscene/dialogue.tres" id="1_njptv"]
+[ext_resource type="Script" uid="uid://h8v0sirksarj" path="res://story/firstofscene/scenes/dialogue_ui.gd" id="2_jx1sv"]
+[ext_resource type="FontFile" uid="uid://bagst6ihhr47c" path="res://story/firstofscene/assets/images/Eight-Bit Madness.ttf" id="3_1vete"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6amk"]
+font = ExtResource("3_1vete")
+font_size = 41
+
+[node name="dialogueUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_njptv")
+script = ExtResource("2_jx1sv")
+
+[node name="dialogue box" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -150.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_njptv")
+
+[node name="dialogLine" type="RichTextLabel" parent="dialogue box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_njptv")
+text = "\"Alex! Wake up! Your breakfast is ready!\""
+justification_flags = 0
+
+[node name="speakerBox" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -150.0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="speakerBox"]
+position = Vector2(0, -1)
+color = Color(0.160784, 0.392157, 0.709804, 0.588235)
+polygon = PackedVector2Array(0, 0, 200, 0, 250, 50, 0, 50)
+
+[node name="speaker name" type="Label" parent="speakerBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -24.0
+offset_right = 42.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_v6amk")
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+position = Vector2(-14, -10)
+polygon = PackedVector2Array(0, 0, 30, 15, 0, 30)
+uv = PackedVector2Array(0, 0, 30, 15, 0, 30)

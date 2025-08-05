@@ -132,9 +132,9 @@ visible = false
 position = Vector2(233, 118)
 
 [node name="locker" parent="entities" instance=ExtResource("10_wse8f")]
-position = Vector2(545, 135)
+position = Vector2(621, -176)
 scale = Vector2(0.385785, 0.329752)
 
 [node name="TreasureChest" parent="entities" instance=ExtResource("11_ic0uy")]
-position = Vector2(429, 145)
+position = Vector2(468, -164)
 script = SubResource("GDScript_ic0uy")
