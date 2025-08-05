@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1e3lx1hqkl6u"]
+
+[ext_resource type="Texture2D" uid="uid://l1j86armsuur" path="res://icon.svg" id="1_c05y5"]
+[ext_resource type="PackedScene" uid="uid://h75a8djb5lpq" path="res://interaction component/interactible.tscn" id="2_cyxcs"]
+
+[sub_resource type="GDScript" id="GDScript_c05y5"]
+script/source = "extends StaticBody2D
+
+@onready var interactable: Area2D = $Interactable
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+func _ready() -> void:
+	interactable.interact = _on_interact
+	
+	
+func _on_interact():
+	if sprite_2d.frame == 0:
+		sprite_2d.frame = 1
+		interactable.is_interactable = false
+		print(\"the player gained 10 gold\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcgn7"]
+size = Vector2(16, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c05y5"]
+radius = 75.2396
+
+[node name="TreasureChest" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = SubResource("GDScript_c05y5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_bcgn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("1_c05y5")
+hframes = 2
+
+[node name="interactible" parent="." instance=ExtResource("2_cyxcs")]
+interact_name = "open sesame"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactible"]
+shape = SubResource("CircleShape2D_c05y5")

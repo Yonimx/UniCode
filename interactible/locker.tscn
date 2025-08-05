@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch7iy4j2puv4m"]
+
+[ext_resource type="Script" uid="uid://bc5byn4svyxnu" path="res://interactible/teacher.gd" id="1_vlit1"]
+[ext_resource type="Texture2D" uid="uid://l1j86armsuur" path="res://icon.svg" id="2_ovaae"]
+[ext_resource type="PackedScene" uid="uid://h75a8djb5lpq" path="res://interaction component/interactible.tscn" id="3_ovaae"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovaae"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yghem"]
+
+[node name="locker" type="StaticBody2D"]
+script = ExtResource("1_vlit1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ovaae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ovaae")
+hframes = 2
+
+[node name="interactible" parent="." instance=ExtResource("3_ovaae")]
+interact_name = "Open Locker"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactible"]
+scale = Vector2(11.7215, -9.73822)
+shape = SubResource("CircleShape2D_yghem")
